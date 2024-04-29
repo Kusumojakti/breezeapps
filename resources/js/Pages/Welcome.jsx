@@ -1,9 +1,16 @@
 import { Link, Head } from '@inertiajs/react';
 import ReactLogo from '@/Components/ReactLogo';
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react';
+import { Dialog } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { animateScroll as scroll } from 'react-scroll';
+import {
+    Card,
+    CardBody,
+    Avatar,
+    IconButton,
+    Typography,
+} from "@material-tailwind/react";
 
 const navigation = [
     { name: 'Team', href: '#team' },
@@ -12,6 +19,75 @@ const navigation = [
     { name: 'Pengertian Breeze', href: '#pengertianBreeze' },
     { name: 'Installasi Breeze', href: '#instalasiBreeze' },
     { name: 'Kesimpulan', href: '#kesimpulan' },
+];
+
+function TeamCard({ img, name, title }) {
+    return (
+        <Card className="rounded-lg bg-[#FAFAFA]" shadow={false}>
+            <CardBody className="text-center">
+                <Avatar
+                    src={img}
+                    alt={name}
+                    variant="circular"
+                    size="xxl"
+                    className="mx-auto mb-6 object-top w-20"
+                />
+                <Typography variant="h5" color="blue-gray" className="!font-medium text-lg">
+                    {name}
+                </Typography>
+                <Typography
+                    color="blue-gray"
+                    className="mb-2 !text-base !font-semibold text-gray-600"
+                >
+                    {title}
+                </Typography>
+                <div className="flex items-center justify-center gap-1.5">
+                    <IconButton variant="text" color="gray">
+                        <i className="fa-brands fa-twitter text-lg" />
+                    </IconButton>
+                    <IconButton variant="text" color="gray">
+                        <i className="fa-brands fa-linkedin text-lg" />
+                    </IconButton>
+                    <IconButton variant="text" color="gray">
+                        <i className="fa-brands fa-dribbble text-lg" />
+                    </IconButton>
+                </div>
+            </CardBody>
+        </Card>
+    );
+}
+
+const members = [
+    {
+        img: "https://img.freepik.com/free-psd/3d-illustration-person-with-glasses_23-2149436191.jpg?w=740&t=st=1714364716~exp=1714365316~hmac=c96268e4f92233bd079d143f3f7fa02b9d74aadb520f0a942cd13f72faf0c462",
+        name: "Norfajriyah",
+        title: "5210411024",
+    },
+    {
+        img: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?w=740&t=st=1714364718~exp=1714365318~hmac=4fbd0d0673c40fb6d9b4e18989f4b2a6dd39cb48670c0b9ea3d0c7e227f722f0",
+        name: "Dwi Rangga Okta Z",
+        title: "5210411054",
+    },
+    {
+        img: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?w=740&t=st=1714364718~exp=1714365318~hmac=4fbd0d0673c40fb6d9b4e18989f4b2a6dd39cb48670c0b9ea3d0c7e227f722f0",
+        name: "M. Aqsha Pasalewa ",
+        title: "5210411080",
+    },
+    {
+        img: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?w=740&t=st=1714364718~exp=1714365318~hmac=4fbd0d0673c40fb6d9b4e18989f4b2a6dd39cb48670c0b9ea3d0c7e227f722f0",
+        name: "Danu Dwiki Laksana ",
+        title: "5210411165",
+    },
+    {
+        img: "https://img.freepik.com/free-psd/3d-illustration-person-with-glasses_23-2149436191.jpg?w=740&t=st=1714364716~exp=1714365316~hmac=c96268e4f92233bd079d143f3f7fa02b9d74aadb520f0a942cd13f72faf0c462",
+        name: "Hanggraini Dea Astuti ",
+        title: "5210411330",
+    },
+    {
+        img: "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?w=740&t=st=1714364718~exp=1714365318~hmac=4fbd0d0673c40fb6d9b4e18989f4b2a6dd39cb48670c0b9ea3d0c7e227f722f0",
+        name: "M. Naufal Hadi J ",
+        title: "5210411365",
+    },
 ];
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
@@ -41,7 +117,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             <header className="fixed inset-x-0 top-0 z-50 bg-white opacity-90 rounded-b-lg">
                 <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
-                        <a href="#"  onClick={(e) => smoothScroll(e, item.href.substring(1))} className="-m-1.5 p-1.5">
+                        <a href="#" onClick={(e) => smoothScroll(e, item.href.substring(1))} className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
                             <img
                                 className="h-8 w-auto"
@@ -181,6 +257,32 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     />
                 </div>
             </div>
+            {/* our team */}
+            <section className="min-h-screen bg-slate-100 py-8 px-8 lg:py-28" id='team'>
+                <div className="container mx-auto bg-gray-light" >
+                    <div className="mb-10 text-center lg:mb-10">
+                        <Typography
+                            variant="h6"
+                            color="blue-gray"
+                            className="text-lg"
+                        >
+                            Meet the Team
+                        </Typography>
+                        <Typography
+                            variant="h1"
+                            color="blue-gray"
+                            className="my-2 !text-2xl lg:!text-4xl"
+                        >
+                            Behind the Success: Our Dedicated Team
+                        </Typography>
+                    </div>
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        {members.map((props, key) => (
+                            <TeamCard key={key} {...props} />
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             {/* Banner Starter */}
             <div className="bg-slate-900 text-black/50 dark:bg-black dark:text-white/50">
@@ -428,6 +530,95 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                 </a>
 
                             </div>
+
+                            {/* instalasi laravel */}
+                            <div className='min-h-screen mt-6' id='instalasiLaravel'>
+                                <div class="p-4 ">
+                                    <h1 class="text-4xl text-center font-semibold mb-6 text-white">Instalasi Laravel</h1>
+                                    <div class="container">
+                                        <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
+
+                                            <div class="flex md:contents">
+                                                <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
+                                                    <div class="h-full w-6 flex items-center justify-center">
+                                                        <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+                                                    </div>
+                                                    <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center">
+                                                        <i class="fas fa-check-circle text-white"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                                    <h3 class="font-semibold text-lg mb-1">Install Composer</h3>
+                                                    <p class="leading-tight text-justify w-full">
+                                                        Download composer sesuai dengan sistem operasi melalui <a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos">getcomposer.org</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex md:contents">
+                                                <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
+                                                    <div class="h-full w-6 flex items-center justify-center">
+                                                        <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+                                                    </div>
+                                                    <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center">
+                                                        <i class="fas fa-check-circle text-white"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                                    <h3 class="font-semibold text-lg mb-1">Create Project Laravel</h3>
+                                                    <p class="leading-tight text-justify">
+                                                        <li>
+                                                            Buka terminal atau command prompt
+                                                        </li>
+                                                        <li>
+                                                            Ketikan perintah: composer create-project laravel/laravel example-app
+                                                        </li>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex md:contents">
+                                                <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
+                                                    <div class="h-full w-6 flex items-center justify-center">
+                                                        <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+                                                    </div>
+                                                    <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center">
+                                                        <i class="fas fa-check-circle text-white"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                                    <h3 class="font-semibold text-lg mb-1">Setup Environtment</h3>
+                                                    <p class="leading-tight text-justify">
+                                                        Edit file .env untuk penyesuaian environtment
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex md:contents">
+                                                <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
+                                                    <div class="h-full w-6 flex items-center justify-center">
+                                                        <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+                                                    </div>
+                                                    <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center">
+                                                        <i class="fas fa-check-circle text-white"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                                    <h3 class="font-semibold text-lg mb-1">Running Project</h3>
+                                                    <p class="leading-tight text-justify">
+                                                        Run project dengan perintah: php artisan serve
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="bg-zinc-900 relative flex items-center gap-6 lg:items-end">
+
+                            </div>
                         </main>
 
                         <footer className="py-16 text-center text-sm text-black dark:text-white/70">
@@ -436,6 +627,8 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     </div>
                 </div>
             </div>
+
+
         </>
     );
 }
