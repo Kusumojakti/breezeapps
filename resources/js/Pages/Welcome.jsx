@@ -66,6 +66,74 @@ function TeamCard({ img, name, title }) {
     );
 }
 
+const posts = [
+    {
+        id: 1,
+        title: 'Sederhana dan Ringan',
+        description:
+            'Laravel Breeze menawarkan kerangka kerja autentikasi yang sederhana dan ringan, sangat cocok untuk proyek-proyek kecil hingga menengah atau sebagai titik awal pembelajaran.',
+        date: 'Mar 16, 2024',
+        datetime: '2024-04-30',
+        category: { title: 'Breeze' },
+        
+    },
+    {
+        id: 2,
+        title: 'Mudah Dipahami dan Implementasi yang cepat',
+        description:
+            'Karena Breeze menggunakan Blade sebagai templating engine dan tidak menggunakan JavaScript yang kompleks, kode sumbernya mudah dipahami dan diikuti oleh pengembang baru atau yang memiliki pengalaman. dan memungkinkan pengembang untuk dengan cepat mengimplementasikan fitur autentikasi dasar seperti login, pendaftaran, lupa kata sandi, dan verifikasi email.',
+        date: 'Mar 16, 2024',
+        datetime: '2024-04-30',
+        category: { title: 'Breeze' },
+        
+    },
+    {
+        id: 3,
+        title: 'Dokumentasi dan Dukungan Komunitas',
+        description:
+            'Memiliki dokumentasi yang lengkap dan dukungan dari komunitas Laravel yang besar, yang membantu pengembang mendapatkan bantuan dan tutorial dengan mudah.',
+        date: 'Mar 16, 2024',
+        datetime: '2024-04-30',
+        category: { title: 'Breeze' },
+        
+    },
+    // More posts...
+];
+
+const posts2 = [
+    {
+        id: 1,
+        title: 'Fitur Terbatas',
+        description:
+            'Dibandingkan dengan starter kit lain seperti Laravel Jetstream atau Laravel Fortify, Breeze memiliki fitur yang lebih terbatas, terutama jika proyek memerlukan fitur autentikasi yang lebih kompleks atau kustomisasi lanjutan.',
+        date: 'Mar 16, 2024',
+        datetime: '2024-04-30',
+        category: { title: 'Breeze' },
+        
+    },
+    {
+        id: 2,
+        title: 'Kurang Fleksibel untuk Skala Besar',
+        description:
+            'Meskipun ideal untuk proyek-proyek kecil dan menengah, Breeze mungkin tidak sefleksibel opsi lain dalam menangani kebutuhan yang lebih kompleks dan skala aplikasi yang lebih besar.',
+        date: 'Mar 16, 2024',
+        datetime: '2024-04-30',
+        category: { title: 'Breeze' },
+        
+    },
+    {
+        id: 3,
+        title: 'Kurangnya Fitur SPA (Single Page Application) atau SSR (Server Side Rendering)',
+        description:
+            'Breeze tidak secara otomatis mendukung aplikasi Single Page Application atau teknologi Server Side Rendering yang bisa lebih efisien untuk aplikasi modern.',
+        date: 'Mar 16, 2024',
+        datetime: '2024-04-30',
+        category: { title: 'Breeze' },
+        
+    },
+    // More posts...
+];
+
 const members = [
     {
         img: "https://img.freepik.com/free-psd/3d-illustration-person-with-glasses_23-2149436191.jpg?w=740&t=st=1714364716~exp=1714365316~hmac=c96268e4f92233bd079d143f3f7fa02b9d74aadb520f0a942cd13f72faf0c462",
@@ -248,7 +316,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     href="#"
                                     className="rounded-md bg-indigo-600 px-3.5 py-5 text-xl font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 >
-                                    Dosen Pengampu : Adam Sekti Aji, S.Kom., M.Kom. 
+                                    Dosen Pengampu : Adam Sekti Aji, S.Kom., M.Kom.
                                 </a>
                             </div>
                         </div>
@@ -613,6 +681,90 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     </div>
                 </div>
 
+                {/* Kelebihan Breeze */}
+                <div className="min-h-screen flex justify-center items-center bg-white">
+                    <div className='container'>
+                        <div className="bg-white py-24 sm:py-32">
+                            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                                <div className="mx-auto max-w-2xl lg:mx-0">
+                                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Kelebihan Starter Kit Laravel : Breeze</h2>
+                                    <p className="mt-2 text-xl leading-8 text-gray-600">
+                                        Breeze memiliki beberapa kelebihan, diantaranya:
+                                    </p>
+                                </div>
+                                <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-900 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                                    {posts.map((post) => (
+                                        <article key={post.id} className="flex bg-slate-900 p-8 rounded-lg max-w-xl flex-col items-start justify-between">
+                                            <div className="flex items-center gap-x-4 text-s">
+                                                <time dateTime={post.datetime} className="text-white">
+                                                    {post.date}
+                                                </time>
+                                                <a
+                                                    href={post.category.href}
+                                                    className="relative z-10 text-s rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-600"
+                                                >
+                                                    {post.category.title}
+                                                </a>
+                                            </div>
+                                            <div className="group relative">
+                                                <h3 className="mt-8 text-xl border-b border-white font-semibold leading-6 text-white group-hover:text-white">
+                                                    <a href={post.href}>
+                                                        <span className="absolute inset-0" />
+                                                        {post.title}
+                                                    </a>
+                                                </h3>
+                                                <p className="mt-5 text-lg leading-6 text-white">{post.description}</p>
+                                            </div>
+                                        </article>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                {/* Kekurangan Breeze */}
+                <div className="min-h-screen flex justify-center items-center bg-slate-900">
+                    <div className='container'>
+                        <div className="bg-slate-900 py-24 sm:py-32">
+                            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                                <div className=" mx-auto max-w-2xl lg:mx-0">
+                                    <h2 className=" text-3xl font-bold tracking-tight text-white sm:text-4xl">Kekurangan Starter Kit Laravel : Breeze</h2>
+                                    <p className="mt-2 text-xl leading-8 text-gray-200">
+                                        Breeze memiliki beberapa Kekurangan, diantaranya:
+                                    </p>
+                                </div>
+                                <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-white pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                                    {posts2.map((post) => (
+                                        <article key={post.id} className="flex bg-white p-8 rounded-lg max-w-xl flex-col items-start justify-between">
+                                            <div className="flex items-center gap-x-4 text-s">
+                                                <time dateTime={post.datetime} className="text-slate-900">
+                                                    {post.date}
+                                                </time>
+                                                <a
+                                                    href={post.category.href}
+                                                    className="relative z-10 text-s rounded-full bg-slate-900 px-3 py-1.5 font-medium text-white hover:bg-white"
+                                                >
+                                                    {post.category.title}
+                                                </a>
+                                            </div>
+                                            <div className="group relative">
+                                                <h3 className="mt-8 text-xl border-b border-slate-900 font-semibold leading-6 text-slate-900 group-hover:text-slate-900">
+                                                    <a href={post.href}>
+                                                        <span className="absolute inset-0" />
+                                                        {post.title}
+                                                    </a>
+                                                </h3>
+                                                <p className="mt-5 text-lg leading-6 text-slate-900">{post.description}</p>
+                                            </div>
+                                        </article>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 {/* Insatalasi Breeze */}
                 <div className="min-h-screen flex justify-center items-center bg-white" id="instalasiBreeze">
                     <div className='container'>
