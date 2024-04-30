@@ -548,13 +548,13 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                 <div class="flex md:contents">
                                     <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
                                         <div class="h-full w-6 flex items-center justify-center">
-                                            <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+                                            <div class="h-full w-1 bg-red-500 pointer-events-none"></div>
                                         </div>
                                         <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center">
                                             <i class="fas fa-check-circle text-white"></i>
                                         </div>
                                     </div>
-                                    <div class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                    <div class="bg-slate-900 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
                                         <h3 class="text-xl font-semibold mb-1">Install Composer</h3>
                                         <p class="text-lg leading-tight text-justify w-full">
                                             Download composer sesuai dengan sistem operasi melalui <a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos">getcomposer.org</a>
@@ -565,13 +565,13 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                 <div class="flex md:contents">
                                     <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
                                         <div class="h-full w-6 flex items-center justify-center">
-                                            <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+                                            <div class="h-full w-1 bg-red-500 pointer-events-none"></div>
                                         </div>
                                         <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center">
                                             <i class="fas fa-check-circle text-white"></i>
                                         </div>
                                     </div>
-                                    <div class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                    <div class="bg-slate-900 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
                                         <h3 class="font-semibold text-xl mb-1">Create Project Laravel</h3>
                                         <p class=" text-lg leading-tight text-justify">
                                             <li>
@@ -587,13 +587,13 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                 <div class="flex md:contents">
                                     <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
                                         <div class="h-full w-6 flex items-center justify-center">
-                                            <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+                                            <div class="h-full w-1 bg-red-500 pointer-events-none"></div>
                                         </div>
                                         <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center">
                                             <i class="fas fa-check-circle text-white"></i>
                                         </div>
                                     </div>
-                                    <div class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                    <div class="bg-slate-900 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
                                         <h3 class="font-semibold text-xl mb-1">Setup Environtment</h3>
                                         <p class="text-lg leading-tight text-justify">
                                             Edit file .env untuk penyesuaian environtment
@@ -604,13 +604,13 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                 <div class="flex md:contents">
                                     <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
                                         <div class="h-full w-6 flex items-center justify-center">
-                                            <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+                                            <div class="h-full w-1 bg-red-500 pointer-events-none"></div>
                                         </div>
                                         <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center">
                                             <i class="fas fa-check-circle text-white"></i>
                                         </div>
                                     </div>
-                                    <div class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
+                                    <div class="bg-slate-900 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full">
                                         <h3 class="font-semibold text-xl mb-1">Running Project</h3>
                                         <p class="leading-tight text-lg text-justify">
                                             Run project dengan perintah: php artisan serve
