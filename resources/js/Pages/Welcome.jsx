@@ -286,7 +286,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
             <main className=" bg-gray-900">
                 {/* Background Biru Banner */}
-                <div className="relative isolate px-6 pt-14 lg:px-8">
+                <div className="relative isolate min-h-screen px-6 pt-14 lg:px-8">
                     <div
                         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
                         aria-hidden="true"
